@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Quiz App in LWC">
+<div class="slds-m-around_medium">
+    <!-- Here Quiz will Come -->
+    <template for:each={myQuestions} for:item="quiz">
+        <div key={quiz.id}>
+            <div><strong>{quiz.id} - {quiz.question}</strong></div>
+        </div>
+
+    </template>
+        
+      
+</div>
+
+    </lightning-card>
+
+</template>

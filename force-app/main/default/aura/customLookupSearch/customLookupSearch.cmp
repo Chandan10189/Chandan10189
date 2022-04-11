@@ -1,0 +1,15 @@
+<aura:component >
+    <aura:registerEvent name = "LookupEvent" type="c:customLookupEvent" />
+    <div class="slds-p-around_none">>
+        <div >
+        <lightning:input
+            aura:id="enter-search"
+            name="enter-search"
+            label="Please Enter Search Text"
+            type="search"
+           onkeyup="{! c.handleKeyUp }"
+        />
+    </div>
+    </div>
+	
+</aura:component>

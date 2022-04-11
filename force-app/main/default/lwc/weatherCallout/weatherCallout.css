@@ -1,0 +1,19 @@
+.color-blue {
+    background-color: #08a7da;
+    height: 100px;
+    color: white;
+    font-family: Tahoma;
+    font-size: 30px;
+    font-weight: 400;
+    border-radius: 5px;
+}
+ 
+.color-grey {
+    background-color: green;
+    height: 100px;
+    color: white;
+    font-family: Tahoma;
+    font-size: 30px;
+    font-weight: 400;
+    border-radius: 5px;
+}

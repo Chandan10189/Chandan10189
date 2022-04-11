@@ -1,0 +1,3 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	<a target="_blank" href="https://cloudelyinc9-dev-ed.lightning.force.com/lightning/r/Opportunity/0065g00000FmTVFAA3/view">Download!</a>
+</aura:component>

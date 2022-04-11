@@ -1,0 +1,33 @@
+<apex:page showHeader="false" standardStylesheets="false" lightningStylesheets="true" docType="html-5.0">
+  <!--  <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; img-src https://*; child-src 'none';"/>
+    <apex:pageBlock >
+        
+        
+        <apex:iframe src="https://gfl.shipsy.app/s/login" scrolling="true" id="theIframe"/>
+    </apex:pageBlock> -->
+      <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" lang="en" style="height: 500%;">
+        <head>
+            <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+            <meta http-equiv="Content-Security-Policy"
+          content="default-src 'self'; img-src https://*; child-src 'none';"/>
+            <title>Iframe page</title>
+            
+            
+            <style type="text/css">
+            </style>
+            
+        </head>
+          
+    <body>
+        <script type="module" src="x-frame-bypass.js"></script>
+        <iframe is="x-frame-bypass" src="https://gfl.shipsy.app/track/insights" scrolling="false" width="100%"/>
+        
+        
+        
+
+        
+    <!-- <iframe title="Wikipedia page for Avocados" src="https://en.wikipedia.org/wiki/Avocado"></iframe> -->
+          </body>
+    </html>
+</apex:page>

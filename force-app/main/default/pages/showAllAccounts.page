@@ -1,0 +1,19 @@
+<apex:page StandardController="Account" setup="false" tabStyle="Contact" >
+    <apex:sectionHeader title="Account Info" subtitle="New Account record"/>
+        <apex:form >
+          <apex:pageBlock title="Account Edit">
+                <apex:commandButton value="Save"/>
+              
+             <apex:pageBlockSection title="Account Information">
+                 <apex:inputfield value="{!Account.name}"/>
+              </apex:pageBlockSection>
+            </apex:pageBlock>
+    
+        </apex:form>
+    
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>Congratulations</h1>
+  This is your new Page: showAllAccounts
+  <b>hiiii Chandan</b>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

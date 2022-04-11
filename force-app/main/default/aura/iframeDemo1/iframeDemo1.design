@@ -1,0 +1,6 @@
+<design:component>
+    <design:attribute name="firstName" label="First Name"/>
+    <design:attribute name="lastName" label="Last Name"/>
+    <design:attribute name="decodedEmail" label="Email"/>
+    <design:attribute name="recordId" label="Record Id"/>
+</design:component>

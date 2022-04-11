@@ -1,0 +1,3 @@
+<aura:component implements="force:lightningQuickAction" >
+	 This is lightning sent mail
+</aura:component>

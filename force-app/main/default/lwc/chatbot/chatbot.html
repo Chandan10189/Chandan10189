@@ -1,0 +1,42 @@
+<template>
+    <div class="wrapper">
+      <div class="chat-box">
+        <template if:true = {minForm}>
+          <lightning-button-icon icon-name="utility-dash" style="float: right; background-color: teal;color: blue;"
+           onclick = {actionForm}></lightning-button-icon>
+           </template>
+        <div class="chat-head" title="Close" onclick = {closeIcon}>
+          <h2>Chat Box</h2>
+          <template if:true = {chatForm}>
+        <lightning-button-icon icon-name="utility-close" style="float:right; margin-top: 6px; margin-right: 5px;">
+            </lightning-button-icon>
+            </template>
+            </div> 
+  
+            <template if:true = {message}>
+              <template for:each = {message} for:item = "msg">
+                  <tr key = {msg.question}>
+              <td > 
+                  <lightning-badge label = {msg.question} >
+                  </lightning-badge>
+                  </td>
+              </tr>
+              <tr key = {msg.question}>  
+                  <td style = "float:right;">
+                      <lightning-badge label = {msg.Answer} style="float: right; margin-right: -220px;">
+                      </lightning-badge>
+                      </td>
+              </tr>
+              </template>
+              </template>
+  
+     <!-- <div class="chat-body"> -->
+          <div class="msg-insert">
+     <lightning-input type="text" label = "" onchange = {changeAction} style="margin-top: 301px; width: 220px;">
+         </lightning-input>
+        <lightning-button onclick = {buttonAction} label = "Send"></lightning-button>
+         <!-- </div> -->
+        </div>
+      </div>
+    </div>
+  </template>

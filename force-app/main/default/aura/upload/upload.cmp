@@ -1,0 +1,25 @@
+<aura:component  implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickActionWithoutHeader" access="global">
+    <aura:attribute name="attList" type="Attachment[]" />
+    
+    <lightning:input name="files" type="file" label="Attachment" multiple="true" 
+                     accept="image/png, .zip" onchange="{! c.handleFilesChange }"/>
+    
+    <table class="slds-table slds-table--border">
+        <thead>
+            <tr>
+                <th></th>
+                <th>File Name</th>
+                <th>File Size</th>
+            </tr>
+        </thead>
+        <tbody>
+           <aura:iteration items="{!v.attList}" var="att">
+               <tr>
+                   <td>Delete</td>
+                   <td>{!att.name}</td>
+                   <td>{!att.size}</td>
+               </tr>
+            </aura:iteration>
+        </tbody>
+    </table>
+</aura:component>

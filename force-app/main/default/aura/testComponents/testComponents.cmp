@@ -1,0 +1,69 @@
+<aura:component controller="testclass" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:lightningQuickAction" access="global" >
+    <aura:attribute name="Baseurl" type="String" />
+    
+    <aura:attribute name="recordId" type="string"/> 
+    <aura:attribute name="parentId" type="Id" default="0065g00000FmTVFAA3"/>
+    <aura:attribute name="filesIds" type="List"/>
+    <aura:attribute name="loaded" type="Boolean" default="false" />
+    
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <lightning:card iconName="standard:document" title ="Purchase Order Files" footer="View All">
+        <div>
+            <aura:set attribute="actions">
+                <lightning:input name="file1" type="file" accept="image/png, .pdf" onchange="{! c.save }" />
+               
+            </aura:set>
+            
+        </div>
+        
+        <aura:if isTrue="{!! v.loaded }">
+            <p class="slds-p-horizontal_small">
+                
+                <div class="slds-scrollable" style="height:14rem;width:100%">
+                    <lightning:layout multipleRows="true">
+                        
+                        <table class="slds-table slds-table--border slds-table slds-table_bordered slds-table_cell-buffer">
+                            <tbody>
+                                
+                                <aura:iteration items="{!v.filesIds}" var="f">
+                                    <div class="" style="padding:15px 5px">
+                                        <div class="slds-page-header__row">
+                                            <div class="slds-page-header__col-title">
+                                                <div class="slds-media">
+                                                    <div class="slds-media__figure">
+                                                        <span class="slds-icon_container slds-icon-standard-opportunity" title="opportunity">
+                                                            <lightning:icon iconName="doctype:image" alternativeText="Image file" title="Image" />
+                                                            <span class="slds-assistive-text">TestPNG</span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="slds-media__body">
+                                                        <div class="slds-page-header__name">
+                                                            <div class="slds-page-header__name-title">
+                                                                <h3>
+                                                                    <span class="slds-text-heading_small" title="{!f.Name}"><a target="_blank" href="{!'+/servlet/servlet.FileDownload?file='+f.Id}" download="GFG" ><p>{!f.Name}</p></a></span>
+                                                                </h3>
+                                                            </div>
+                                                        </div>
+                                                        <p class="slds-page-header__name-meta"><lightning:formattedDateTime value="{!f.CreatedDate}" timeZone="UTC" /> • <lightning:formattedNumber value="{!(f.BodyLength)/1024}" maximumFractionDigits="2"/> KB • {!f.ContentType}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                    
+                                </aura:iteration>
+                            </tbody>
+                        </table>
+                        
+                    </lightning:layout>
+                </div>
+            </p>
+            <aura:set attribute="else">
+                <lightning:spinner alternativeText="Loading" />
+            </aura:set>
+        </aura:if>
+    </lightning:card>
+    
+</aura:component>

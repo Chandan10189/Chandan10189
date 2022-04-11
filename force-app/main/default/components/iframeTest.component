@@ -1,0 +1,8 @@
+<apex:component >
+    <html>
+        <body>
+        <iframe src="https://gfl.shipsy.app/s/login" scrolling="false" width="100%" height="800%"/>
+        </body>
+    </html>
+    
+</apex:component>

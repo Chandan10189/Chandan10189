@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title = " Accounts Information">
+        <lightning-record-edit-form
+        object-api-name= "Account"   
+        record-id={accountId}     
+        columns = "2"
+         onsuccess={handleSuccess}
+        >
+        <lightning-input-field field-name="Name" value={record.Name} ></lightning-input-field>
+        <lightning-input-field field-name="Type" value={record.Type} ></lightning-input-field>
+        <lightning-input-field field-name="Phone" value={record.Phone} ></lightning-input-field>
+        <lightning-input-field field-name="AccountSource" value={record.AccountSource} ></lightning-input-field>
+        </lightning-record-edit-form>
+      
+    </lightning-card>
+</template>

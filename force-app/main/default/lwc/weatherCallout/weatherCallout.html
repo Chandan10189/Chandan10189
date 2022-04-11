@@ -1,0 +1,87 @@
+<template>
+    <lightning-card>
+        <lightning-input type="text" value={cityValue} label="City Name" onchange= {handleChange}>
+</lightning-input>
+
+<!--<lightning-input type="text" value= {postalValue} label="Postal code" onchange= {handleChange}
+  </lightning-input> -->
+
+  <lightning-input type="text" value={postalValue} label="Postal Code" onchange= {handleChange}>
+</lightning-input>
+<lightning-button label="Weather check" onclick= {weatherCheck}></lightning-button>
+
+
+
+<template if:true= {weatherchk}>
+
+<lightning-layout>
+<lightning-layout-item size="3" medium-device-size="4" padding="around-small">
+    <lightning-card icon-name="standard:topic" title="Temperature">
+        <div class="slds-align_absolute-center color-blue">
+            <template if:true={result}>
+                {temperature}
+            </template>
+        </div>
+    </lightning-card>
+</lightning-layout-item>
+
+<lightning-layout-item size="3" medium-device-size="4" padding="around-small">
+    <lightning-card icon-name="standard:topic" title="Sun Rise">
+        <div class="slds-align_absolute-center color-blue">
+            <template if:true={result}>
+                <lightning-formatted-time value={sunRise}></lightning-formatted-time>
+            </template>
+        </div>
+    </lightning-card>
+</lightning-layout-item>
+
+<lightning-layout-item size="3" medium-device-size="4" padding="around-small">
+    <lightning-card icon-name="standard:topic" title="Sun set">
+        <div class="slds-align_absolute-center color-blue">
+            <template if:true={result}>
+                <lightning-formatted-time value= {sunSet}></lightning-formatted-time>
+            </template>
+        </div>
+    </lightning-card>
+</lightning-layout-item>
+</lightning-layout>
+
+<lightning-layout>
+    
+    <lightning-layout-item size="3" medium-device-size="4" padding="around-small">
+        <lightning-card icon-name="utility:flow" title="Current Wind Speed">
+            <div class="slds-align_absolute-center color-grey">
+                <template if:true={result}>
+                    {currentWindSpeed}
+                </template>
+            </div>
+        </lightning-card>
+    </lightning-layout-item>
+
+    <lightning-layout-item size="3" medium-device-size="4" padding="around-small">
+        <lightning-card icon-name="utility:flow" title="Latitude">
+            <div class="slds-align_absolute-center color-grey">
+                <template if:true={result}>
+                    {latitude}
+                </template>
+            </div>
+        </lightning-card>
+    </lightning-layout-item>
+
+    <lightning-layout-item size="3" medium-device-size="4" padding="around-small">
+        <lightning-card icon-name="utility:flow" title="Longitude">
+            <div class="slds-align_absolute-center color-grey">
+                <template if:true={result}>
+                    {longitude}
+                </template>
+            </div>
+        </lightning-card>
+    </lightning-layout-item>
+
+</lightning-layout>
+</template>
+
+ <lightning-map map-markers={mapMarkers} zoom-level={zoomLevel}>
+</lightning-map>
+</lightning-card>
+</template>

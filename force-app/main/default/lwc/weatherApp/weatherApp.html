@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title ={getCityName}>
+        <lightning-layout>
+            <lightning-layout-item>
+           <!-- <lightning-input label="City Name" type = "text" onchange="{CityNameAction}"
+            </lightning-input> -->
+            <lightning-input label="City Name" type="text" onchange= "{CityName}"> </lightning-input>
+            <lightning-button title="Save" type="text" label="Save" onclick= {save1}> </lightning-button>
+            </lightning-layout-item>
+
+           
+
+        </lightning-layout>
+
+        
+        <lightning-layout>
+            <lightning-layout-item padding = "around-small">
+                <lightning-card title =" Weather Condition">
+                   Temperature : {getConvertedTemp} <br>
+                   City Name  :  {getCityName}  <br>
+                   Humidity   :  {gethumidity}
+
+                </lightning-card>
+            </lightning-layout-item>
+        </lightning-layout>
+        
+    </lightning-card>
+</template>
